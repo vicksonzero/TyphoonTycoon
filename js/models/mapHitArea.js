@@ -20,7 +20,6 @@ define([
 			var hitareaImg = new Image();
 			hitareaImg.crossOrigin = '';	//fix Cross-Origin Resource Sharing policy issue 
 											// or store the image as Data URI
-
 			hitareaImg.src = "img/map-hitarea.png";
 			hitareaImg.onload = function() {
 				ctx.drawImage(hitareaImg, 0, 0);
