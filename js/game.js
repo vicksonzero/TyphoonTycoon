@@ -334,11 +334,11 @@ define([
 				/**
 				 * test earthquake
 				 */
-				// setInterval(function(){
-				// 	var targetX = Config.hkArea.x + Math.random()*40 - 20;
-				// 	var targetY = Config.hkArea.y + Math.random()*40 - 20;
-				// 	var earthquake = new Earthquake(targetX, targetY);
-				// }, 3000);
+				setInterval(function(){
+					var targetX = Config.hkArea.x + Math.random()*40 - 20;
+					var targetY = Config.hkArea.y + Math.random()*40 - 20;
+					var earthquake = new Earthquake(targetX, targetY);
+				}, 3000);
 
 				/*
 					Create Tower when mouse click

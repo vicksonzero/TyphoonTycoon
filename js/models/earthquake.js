@@ -1,13 +1,14 @@
 // defines your module and loads any dependencies
 define([
 	'stage',
-	'models/buildEffect',
 	'config',
+	'models/buildEffect',
+	// 'models/explodeEffect',
 	'utility',
 	// 'units/powerPlant',
 	// 'units/nuclearPlant',
 	'Game'
-], function(Stage, BuildEffect, Config, Utility, Game) { //NuclearPlant, PowerPlant
+], function(Stage, BuildEffect,  Config, Utility, Game) { //ExplodeEffect, NuclearPlant, PowerPlant
 
 	console.log("earthquake.js loaded");
 	/*

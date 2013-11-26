@@ -94,5 +94,9 @@ define({
 		lineWidth:3,
 		duration:30,
 		cycle:3
+	},
+	explodEffect:{
+		particleColor: "#525252"
 	}
+
 });
