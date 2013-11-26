@@ -95,8 +95,7 @@ define({
 		duration:30,
 		cycle:3
 	},
-	explodEffect:{
-		particleColor: "#525252"
+	explodEffect: {
+		particleColor:'#525252'
 	}
-
 });

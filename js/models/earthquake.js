@@ -1,14 +1,14 @@
 // defines your module and loads any dependencies
 define([
 	'stage',
-	'config',
 	'models/buildEffect',
-	// 'models/explodeEffect',
+	'models/explodeEffect',
+	'config',
 	'utility',
 	// 'units/powerPlant',
 	// 'units/nuclearPlant',
 	'Game'
-], function(Stage, BuildEffect,  Config, Utility, Game) { //ExplodeEffect, NuclearPlant, PowerPlant
+], function(Stage, BuildEffect, ExplodeEffect, Config, Utility, Game) { //NuclearPlant, PowerPlant
 
 	console.log("earthquake.js loaded");
 	/*
@@ -98,7 +98,10 @@ define([
 				//course damge 
 				console.log('distroy:'+ tempBuilding.id);
 				//tempBuilding.remove();
+				
+				new ExplodeEffect(tempBuilding.x, tempBuilding.y);
 				Stage.removeChild(tempBuilding.id, 'towers');
+
 
 				// if(tempBuilding instanceof PowerPlant)
 				// {

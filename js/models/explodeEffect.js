@@ -62,7 +62,7 @@ define([
 			};
 		}
 
-		createExplosion( targetX, targetY, Config.explodEffect.particleColor);
+		this.createExplosion( targetX, targetY, Config.explodEffect.particleColor);
 		
 		this.id = Stage.addChild(this,'effects');
 	};
@@ -103,6 +103,12 @@ define([
 		that.effectIndex = index;
 	};
 
+
+	ExplodeEffect.prototype.randomFloat = function(min, max)
+	{
+		return min + Math.random()*(max-min);
+	};
+
 	ExplodeEffect.prototype.createExplosion = function (x, y, color){
 		var minSize = 10;
 		var maxSize = 30;
@@ -112,9 +118,11 @@ define([
 		var minScaleSpeed = 1.0;
 		var maxScaleSpeed = 4.0;
 
+		that = this;
+
 		for (var angle=0; angle<360; angle += Math.round(360/count))
 		{
-			var particle = new Particle();
+			var particle = new that.Particle();
 
 			particle.x = x;
 			particle.y = y;
