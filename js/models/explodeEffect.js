@@ -1,4 +1,5 @@
 // defines your module and loads any dependencies
+// http://www.gameplaypassion.com/blog/explosion-effect-html5-canvas/
 define([
 	'stage',
 	'models/effect',
