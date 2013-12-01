@@ -22,8 +22,8 @@ define({
 		typhoonAbsorbRate: 10,
 		intiMinAmong: 1,
 		intiMaxAmong: 20,
-		difficulty: 50, //larger is easier
-		initDelay: 8 //1 = 1 second
+		difficulty: 40, //larger is easier
+		initDelay: 7 //1 = 1 second
 	},
 
 	// towers		=============================

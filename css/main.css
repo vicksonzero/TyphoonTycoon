@@ -79,7 +79,12 @@ body {
 #game-over h1 {
   text-shadow: 0 2px 6px rgba(20, 20, 20, 0.5);
   font-size: 4em;
-  margin: 150px 0 80px;
+  margin: 20px 0 60px;
+}
+#game-over #final-score {
+  text-shadow: 0 2px 6px rgba(20, 20, 20, 0.5);
+  font-size: 2em;
+  margin: 130px 0 20px;
 }
 #game-over button {
   color: #fff;
@@ -266,6 +271,7 @@ body {
   border-left: none;
   margin: 3px 0 0;
 }
+#score-bar #timer,
 #score-bar .title {
   font-size: 0.5em;
   font-style: italic;

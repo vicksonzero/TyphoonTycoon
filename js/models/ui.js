@@ -137,6 +137,7 @@ define([
 			this.$powerTitle = $('#power-title');
 			this.$powerBar = $('#power-bar');
 			this.$canvas = $('#game-canvas');
+			this.$timer = $('#timer');
 		},
 		setButtonState: function() {
 			if (this.activatedMode !== null) {

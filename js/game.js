@@ -34,6 +34,7 @@ define([
 			gameUI: null,
 			lastTime: 0,
 			gameTime: 0,
+			totalGameTime: 0,
 			powerQuota: 0,
 			powerUsed: 0,
 			hsi: 0,
@@ -86,6 +87,7 @@ define([
 				cash = 0;
 				gameTime = 0;
 				lastTime = 0;
+				totalGameTime = 0;
 				powerQuota = powerUsed = 0;
 				gameUI.setHsiDisplayValue(hsi);
 				gameUI.setPowerBar(0, 0);
@@ -147,6 +149,8 @@ define([
 				if (dt < 1) { // fix bug coused by lag
 					gameTime += dt;
 				}
+
+				totalGameTime += dt;
 
 				if (gameTime > Config.enemy.initDelay) {
 					//reset and next level 
