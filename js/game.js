@@ -15,8 +15,9 @@ define([
 	'models/mapHitArea',
 	'models/earthquake',
 	'hsi',
-	'models/toast'
-], function(_, Stage, UI, Utility, Config, Tower, Unit, Enemy, MapHitArea, Earthquake, HSI, Toast) {
+	'models/toast',
+	'models/signals/sigReset'
+], function(_, Stage, UI, Utility, Config, Tower, Unit, Enemy, MapHitArea, Earthquake, HSI, Toast, SigReset) {
 
 
 	var Game = (function() {
@@ -36,13 +37,16 @@ define([
 			gameTime: 0,
 			powerQuota: 0,
 			powerUsed: 0,
-			hsi: null,
+			hsi: new HSI(Config.HSI.init),
 			cash: 0,
 			level: 1,
 			enemyCounter: 0,
 			minAmongOfEnemy: 0,
 			maxAmongOfEnemy: 0,
 			earthquake:Earthquake,
+			on:{
+				reset: SigReset.get()
+			},
 
 			// Initialize the game
 			init: function() {
@@ -77,9 +81,8 @@ define([
 			start: function() {
 				this.reset();
 				lastTime = Date.now();
-
-				_intervalId = setInterval(function() {
-					Game.updateHSI();
+				_intervalId = setInterval(function() {		
+					Game.updateHSI();		
 				}, 100);
 				this.loop();
 			},
@@ -98,6 +101,7 @@ define([
 				enemyCounter= 0;
 				minAmongOfEnemy = Config.enemy.intiMinAmong;
 				maxAmongOfEnemy = Config.enemy.intiMaxAmong;
+				this.on.reset.dispatch();
 
 
 				Built = {
